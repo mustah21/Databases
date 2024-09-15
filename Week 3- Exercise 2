@@ -1,0 +1,21 @@
+#exercise 2 Single table queries
+
+Q1. select * from goal;
+
+Q2. select name, type from airport where iso_country = "FI";
+
+Q3. select name from airport where iso_country = "FI" order by name;
+
+Q4. select name, type from airport where iso_country = "FI" order by type, name;
+
+Q5. select name from country where name like "F%"
+
+Q6. select name from country where name like "%F%";
+
+Q7. select location from game where name = "Vesa";
+
+Q8. select co2_consumed from game where screen_name = "Ilkka";
+
+Q9. select distinct co2_budget from game;
+
+Q10. select screen_name, co2_budget, co2_consumed, (co2_budget - co2_consumed) As co2_difference from game where screen_name = "Ilkka"
