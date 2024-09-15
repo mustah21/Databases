@@ -30,3 +30,43 @@ Q9. select distinct co2_budget from game;
 Q10. select screen_name, co2_budget, co2_consumed, (co2_budget - co2_consumed) As co2_difference from game where screen_name = "Ilkka";
 ![Screenshot 2024-09-15 153146](https://github.com/user-attachments/assets/02d0117f-9346-4a3b-8896-25da78a5f121)
 
+
+# Week 3 exercise 3---Multiple data queries 
+
+
+Q1.  select country.name as "Country name", airport.name as "Aiport name" from airport, country where country.iso_country = airport.iso_country and country.name = "iceland";
+![Screenshot 2024-09-15 163929](https://github.com/user-attachments/assets/ce0b1c05-382e-4f53-9447-5d44f49b12be)
+
+Q2. select airport.name as "Airport name" from airport, country where airport.iso_country = country.iso_country and country.name = "France" and airport.type = "large_airport";
+![Screenshot 2024-09-15 165243](https://github.com/user-attachments/assets/d173272d-acfe-4c4d-b8b6-616e14870a4a)
+
+Q3. select country.name as "Country name", airport.name as Airport name" from airport, country where country.iso_country = airport.iso_country and country.continent = "AN";
+![Screenshot 2024-09-15 170627](https://github.com/user-attachments/assets/3367d61a-c22a-413f-99fc-b7c13fbf9a6a)
+
+Q4.  select country.name as "Country name", airport.name as Airport name" from airport, country where country.iso_country = airport.iso_country and country.continent = "AN";
+![Screenshot 2024-09-15 172551](https://github.com/user-attachments/assets/10a4f95c-2ddb-4674-88da-a53e762d3ca7)
+
+Q5.  select elevation_ft * 0.3048 as "elevation_m" from airport, game where ident = location and screen_name = "Heini";
+![Screenshot 2024-09-15 173709](https://github.com/user-attachments/assets/b7b6fa46-cdc9-4461-8fdf-c9cc3ad0caee)
+
+Q6.  select name from airport, game where location = ident and screen_name = "Ilkka";
+![Screenshot 2024-09-15 174026](https://github.com/user-attachments/assets/ddf96636-6cc4-4787-ba58-61dac7a7442f)
+
+Q7.  select country.name from country, game, airport where location = ident and airport.iso_country = country.iso_country and screen_name = "Ilkka";
+![Screenshot 2024-09-15 174813](https://github.com/user-attachments/assets/ffb92dd0-d3dc-4815-bff1-07b35de6635d)
+
+Q8.  select name from goal, goal_reached, game where game.id = game_id and goal.id = goal_id and screen_name = "Hein
+![Screenshot 2024-09-15 180558](https://github.com/user-attachments/assets/3911f574-c8ee-47bb-ba8d-2e08386ff4fd)
+
+Q9.  select airport.name from airport, goal_reached, goal, game where ident = location and game.id = game_id and goal.id = goal_id and screen_name = "ILKKA" and goal.name = "clouds";
+![Screenshot 2024-09-15 181417](https://github.com/user-attachments/assets/f171249d-73f2-475b-a147-36b8828ac298)
+
+Q10.  select country.name from airport, goal_reached, goal, game, country where ident = location and game.id = game_id and goal.id = goal_id and airport.iso_country = country.iso_country and screen_name = "ILKKA" and goal.name = "clouds";
+![Screenshot 2024-09-15 182228](https://github.com/user-attachments/assets/632f8842-979f-436b-82a3-1beae81983c6)
+
+
+
+
+
+
+
