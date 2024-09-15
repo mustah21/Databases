@@ -1,4 +1,4 @@
-#Week 3 exercise 2---Single table queries
+#    Week 3 exercise 2---Single table queries
 
 Q1. select * from goal;
 ![Screenshot 2024-09-15 152400](https://github.com/user-attachments/assets/9c5e3ec1-506d-44e7-bfe1-8654dac82946)
@@ -31,7 +31,7 @@ Q10. select screen_name, co2_budget, co2_consumed, (co2_budget - co2_consumed) A
 ![Screenshot 2024-09-15 153146](https://github.com/user-attachments/assets/02d0117f-9346-4a3b-8896-25da78a5f121)
 
 
-# Week 3 exercise 3---Multiple data queries 
+#  Week 3 exercise 3---Multiple data queries 
 
 
 Q1.  select country.name as "Country name", airport.name as "Aiport name" from airport, country where country.iso_country = airport.iso_country and country.name = "iceland";
@@ -43,7 +43,7 @@ Q2. select airport.name as "Airport name" from airport, country where airport.is
 Q3. select country.name as "Country name", airport.name as Airport name" from airport, country where country.iso_country = airport.iso_country and country.continent = "AN";
 ![Screenshot 2024-09-15 170627](https://github.com/user-attachments/assets/3367d61a-c22a-413f-99fc-b7c13fbf9a6a)
 
-Q4.  select country.name as "Country name", airport.name as Airport name" from airport, country where country.iso_country = airport.iso_country and country.continent = "AN";
+Q4.  select elevation_ft from airport, game where ident = location and screen_name = "Heini";
 ![Screenshot 2024-09-15 172551](https://github.com/user-attachments/assets/10a4f95c-2ddb-4674-88da-a53e762d3ca7)
 
 Q5.  select elevation_ft * 0.3048 as "elevation_m" from airport, game where ident = location and screen_name = "Heini";
@@ -55,7 +55,7 @@ Q6.  select name from airport, game where location = ident and screen_name = "Il
 Q7.  select country.name from country, game, airport where location = ident and airport.iso_country = country.iso_country and screen_name = "Ilkka";
 ![Screenshot 2024-09-15 174813](https://github.com/user-attachments/assets/ffb92dd0-d3dc-4815-bff1-07b35de6635d)
 
-Q8.  select name from goal, goal_reached, game where game.id = game_id and goal.id = goal_id and screen_name = "Hein
+Q8.  select name from goal, goal_reached, game where game.id = game_id and goal.id = goal_id and screen_name = "Heini";
 ![Screenshot 2024-09-15 180558](https://github.com/user-attachments/assets/3911f574-c8ee-47bb-ba8d-2e08386ff4fd)
 
 Q9.  select airport.name from airport, goal_reached, goal, game where ident = location and game.id = game_id and goal.id = goal_id and screen_name = "ILKKA" and goal.name = "clouds";
