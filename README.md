@@ -65,8 +65,22 @@ Q10.  select country.name from airport, goal_reached, goal, game, country where 
 ![Screenshot 2024-09-15 182228](https://github.com/user-attachments/assets/632f8842-979f-436b-82a3-1beae81983c6)
 
 
+# Week 4 exercise 4
 
+Q1. select country.name as "country name", airport.name as "airport name" from country inner join airport on country.iso_country = airport.iso_country where country.name = "Finland" and scheduled_service = "yes";
+![Screenshot 2024-09-23 174517](https://github.com/user-attachments/assets/bff6530f-d606-41c7-9c2b-e25cb8121395)
 
+Q2. select screen_name, airport.name from game inner join airport on location =ident;
+![Screenshot 2024-09-23 180418](https://github.com/user-attachments/assets/497f228b-084a-42e0-953c-767b7f8f8f2a)
+
+Q3.select screen_name, country.name from game inner join airport on location = ident inner join country on country.iso_country = airport.iso_country;
+![Screenshot 2024-09-23 180522](https://github.com/user-attachments/assets/4df704c5-f80b-4821-acb5-588d7fc7d99b)
+
+Q4. select airport.name, screen_name from airport left join game on ident = location where name like %Hels%;
+![Screenshot 2024-09-23 181143](https://github.com/user-attachments/assets/1bc15eb2-1687-4748-b4fb-4775eea6e269)
+
+Q5.select name, screen_name from goal left join goal_reached on goal.id = goal_id left join game on game.id = game_id;
+![Screenshot 2024-09-23 181522](https://github.com/user-attachments/assets/e256eaaf-43ba-4d95-a03d-154da7556587)
 
 
 
