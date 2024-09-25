@@ -1,4 +1,4 @@
-#    Week 3 exercise 2---Single table queries
+![Screenshot 2024-09-25 222302](https://github.com/user-attachments/assets/eb9f80c6-f144-40b8-b16b-b09101fdaf86)#    Week 3 exercise 2---Single table queries
 
 Q1. select * from goal;
 ![Screenshot 2024-09-15 152400](https://github.com/user-attachments/assets/9c5e3ec1-506d-44e7-bfe1-8654dac82946)
@@ -82,5 +82,23 @@ Q4. select airport.name, screen_name from airport left join game on ident = loca
 Q5.select name, screen_name from goal left join goal_reached on goal.id = goal_id left join game on game.id = game_id;
 ![Screenshot 2024-09-23 181522](https://github.com/user-attachments/assets/e256eaaf-43ba-4d95-a03d-154da7556587)
 
+# Week 4 exercise 5
 
+Q1. select name from country where iso_country in ( select iso_country from airport where name like "Satsuma%");
+![Screenshot 2024-09-25 222302](https://github.com/user-attachments/assets/d31ecc84-ea98-4581-a073-849f5989ab0e)
+
+
+Q2. select name from airport where iso_country in (select iso_country from country where name like "Monaco");
+![Screenshot 2024-09-25 222502](https://github.com/user-attachments/assets/fa834249-3959-45d0-b304-2fdb1eb418ac)
+
+
+Q3. select screen_name from game where id in (select game_id from goal_reached where goal_id in ( select id from goal where name = "Clouds"));
+![Screenshot 2024-09-25 223042](https://github.com/user-attachments/assets/206b25d0-e1c3-4445-abce-98690628d2d3)
+
+Q4.  select country.name from country where iso_country not in(select airport.iso_country from airport);
+![Screenshot 2024-09-25 223420](https://github.com/user-attachments/assets/aefa197f-c233-4443-833f-a848d04d9e8d)
+
+
+Q5. select name from goal where id not in(select goal.id from goal, goal_reached, game where game.id = game_id and goal.id = goal_id and screen_name = "Heini" );
+![Screenshot 2024-09-25 223617](https://github.com/user-attachments/assets/ef00fd25-bf41-4be4-b4d0-1282fe6ce3ba)
 
