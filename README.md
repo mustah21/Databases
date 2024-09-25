@@ -107,9 +107,8 @@ Q5. select name from goal where id not in(select goal.id from goal, goal_reached
 Q1. select max(elevation_ft) from airport;
 ![Screenshot 2024-09-25 230633](https://github.com/user-attachments/assets/87d378e3-3183-4555-b348-de09e9b059c9)
 
-Q2. ![image](https://github.com/user-attachments/assets/e124f28a-ba31-4ad9-8128-f45de5174d64)
+Q2. select continent, count(*) from country group by continent;
 ![Screenshot 2024-09-25 231251](https://github.com/user-attachments/assets/9ce87aaf-3bb6-4547-b0ce-108febe47979)
-
 
 Q3. select screen_name, count(*) from game, goal_reached where id = game_id group by screen_name;
 ![Screenshot 2024-09-25 231532](https://github.com/user-attachments/assets/859a9923-8ead-4463-97ac-01b50643b9b2)
@@ -117,15 +116,10 @@ Q3. select screen_name, count(*) from game, goal_reached where id = game_id grou
 Q4. select screen_name from game where co2_consumed in (select min(co2_consumed)from game);
 ![Screenshot 2024-09-25 233339](https://github.com/user-attachments/assets/dab543ef-67e8-4ee2-b3de-4b53d157d11e)
 
-Q5. select country.name, count(*) from country, airport
-where airport.iso_country = country.iso_country
-group by country.iso_country
-order by count(*) desc
-limit 50;
+Q5. select country.name, count(*) from country, airport where airport.iso_country = country.iso_country group by country.iso_country order by count(*) desc limit 50;
 ![Screenshot 2024-09-25 234200](https://github.com/user-attachments/assets/4f95b739-c6c4-4cd2-bc52-d3a63251e97d)
 
-Q6. select country.name from country, airport where airport.iso_country = country.iso_country
-group by country.iso_country having count(*) > 1000;
+Q6. select country.name from country, airport where airport.iso_country = country.iso_country group by country.iso_country having count(*) > 1000;
 ![Screenshot 2024-09-25 234822](https://github.com/user-attachments/assets/f8510cb7-0a1e-42fa-9fd4-f52bcb8d6d84)
 
 Q7. select name from airport where elevation_ft in (select max(elevation_ft) from airport);
@@ -140,11 +134,9 @@ Q9. select count(*) from game where screen_name = "Vesa";
 Q10. select name from airport where latitude_deg in(select min(latitude_deg) from airport);
 ![Screenshot 2024-09-26 000806](https://github.com/user-attachments/assets/cbb989b9-a6c4-4305-bccb-3e9847fa86b9)
 
-# Week 5 exercise 5
+# Week 5 exercise 7
 
-Q1. update game
-set  location = (select ident from airport where name = "Nottingham Airport"), co2_consumed = co2_consumed+500
-where screen_name = "Vesa";
+Q1. update game set  location = (select ident from airport where name = "Nottingham Airport"), co2_consumed = co2_consumed+500 where screen_name = "Vesa";
 ![Screenshot 2024-09-26 002936](https://github.com/user-attachments/assets/42e390c2-daf1-40c0-89f8-8d6d5ff6cb04)
 
 Q2. 
