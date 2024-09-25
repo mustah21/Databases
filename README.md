@@ -1,4 +1,4 @@
-![Screenshot 2024-09-25 222302](https://github.com/user-attachments/assets/eb9f80c6-f144-40b8-b16b-b09101fdaf86)#    Week 3 exercise 2---Single table queries
+# Week 3 exercise 2---Single table queries
 
 Q1. select * from goal;
 ![Screenshot 2024-09-15 152400](https://github.com/user-attachments/assets/9c5e3ec1-506d-44e7-bfe1-8654dac82946)
